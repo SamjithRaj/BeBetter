@@ -3,38 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance</title>
+    <title>BeBetter - No Shortcuts, Just Results.</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-        /* New style for the logo */
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            max-width: 150px; /* Adjust size as needed */
+        :root {
+            --primary-color: #0a2540; /* Deep Blue */
+            --secondary-color: #ffffff; /* White */
+            --accent-color: #43bdec; /* Bright Blue */
+            --text-color: #333;
+            --light-gray: #f7f7f7;
         }
 
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
-            background-color: #f7f7f7; 
-            color: #333;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        /* Header & Logo */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 10;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+
+        .logo {
+            max-width: 150px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0 0 10px 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #3ab1cf;
+        }
+        
+        /* General Section Styling */
+        .section {
             text-align: center;
         }
-        h1 { font-size: 2em; }
+
+        .section-light {
+            background-color: var(--light-gray);
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        
+        /* Approach Section */
+        .approach-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .approach-card {
+            flex-basis: 30%;
+            min-width: 280px;
+        }
+
+        .approach-card h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+        }
+        
+        /* Testimonial Section */
+        .testimonial {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+        
+        .testimonial blockquote {
+            border: none;
+            font-size: 1.5em;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+        
+        .testimonial cite {
+            font-weight: bold;
+        }
+
+        /* Final CTA & Footer */
+        .footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+        }
+
     </style>
 </head>
 <body>
 
-    <img src="logo.png" alt="Be Better Ideas Logo" class="logo">
+    <header class="header">
+        <div class="container">
+            <img src="logo.png" alt="BeBetter Logo" class="logo">
+            </div>
+    </header>
 
-    <div>
-        <h1>Site is currently under maintenance.</h1>
-        <p>Please visit later.</p>
-    </div>
+    <main>
+        <section class="hero">
+            <h1 data-aos="fade-down">No shortcuts, just results.</h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+                bebetter is an organization committed to guiding people to live a better life and be the best possible versions of themselves, physically and mentally.
+            </p>
+            <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="400">Begin Your Journey</a>
+        </section>
+
+        <section id="approach" class="section section-light">
+            <div class="container">
+                <h2 data-aos="fade-up">Our Approach</h2>
+                <div class="approach-grid">
+                    <div class="approach-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Physical Wellness</h3>
+                        <p>We provide tailored fitness and nutritional guidance to build a strong, resilient body that serves you for life.</p>
+                    </div>
+                    <div class="approach-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Mental Clarity</h3>
+                        <p>Through proven mindset coaching techniques, we help you overcome obstacles and develop unwavering focus.</p>
+                    </div>
+                    <div class="approach-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Sustainable Habits</h3>
+                        <p>Our focus is on creating lasting change by integrating powerful, positive habits into your daily routine.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonial" class="section testimonial">
+            <div class="container" data-aos="fade-up">
+                <h2>Words From Our Community</h2>
+                <blockquote>
+                    "Working with bebetter changed my entire outlook on life. I'm stronger and more focused than I've ever been."
+                </blockquote>
+                <cite>- Alex Johnson</cite>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+             <div class="container">
+                <h2 data-aos="fade-up">Ready to Be Better?</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Take the first step towards becoming the best version of yourself. Let's talk.</p>
+                <a href="mailto:your-email@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="200">Book a Free Discovery Call</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; 2025 bebetter.run - All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // animation duration in milliseconds
+            once: true, // whether animation should happen only once - while scrolling down
+        });
+    </script>
 
 </body>
 </html>
