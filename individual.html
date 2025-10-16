@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeBetter - For Individuals</title>
+    <title>BeBetter - For Myself</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #0a2540; /* Deep Blue from original */
+            --primary-color: #0a2540; /* Deep Blue */
             --secondary-color: #ffffff; /* White */
             --accent-color: #2C6A97; /* Logo Blue */
             --logo-gold: #FDCB01; /* Logo Gold */
@@ -15,57 +16,160 @@
             --light-gray: #f7f7f7;
         }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); }
-        .container { width: 90%; max-width: 1100px; margin: auto; padding: 60px 0; }
+        .container { width: 90%; max-width: 1100px; margin: auto; padding: 60px 20px; }
         .header { position: absolute; top: 0; left: 0; width: 100%; padding: 20px 0; z-index: 10; }
-        .header .container { display: flex; justify-content: space-between; align-items: center; padding: 0; }
+        .header .container { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .logo { max-width: 150px; }
-        .hero { background-color: var(--primary-color); color: var(--secondary-color); height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; padding: 0 20px; }
+        .hero {
+            background: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.7)), url('placeholder-individual.jpg'); /* Developer Note: Replace with a confident Indian man/woman in mid-motion */
+            background-size: cover;
+            background-position: center;
+            color: var(--secondary-color);
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
         .hero h1 { font-size: 3.5em; margin: 0 0 10px 0; color: var(--logo-gold); }
         .hero p { font-size: 1.2em; max-width: 600px; margin-bottom: 30px; }
         .cta-button { background-color: var(--accent-color); color: var(--secondary-color); padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; }
-        .cta-button:hover { background-color: #255a80; } /* Slightly darker blue on hover */
-        .section { text-align: center; }
+        .cta-button:hover { background-color: #255a80; }
+        .section { text-align: center; padding: 80px 0; }
         .section-light { background-color: var(--light-gray); }
-        .section h2 { font-size: 2.5em; margin-bottom: 40px; }
-        .approach-grid { display: flex; justify-content: space-around; gap: 30px; flex-wrap: wrap; }
-        .approach-card { flex-basis: 30%; min-width: 280px; }
-        .approach-card h3 { font-size: 1.5em; color: var(--accent-color); }
-        .testimonial { background-color: var(--primary-color); color: var(--secondary-color); }
-        .testimonial h2 { color: var(--logo-gold); }
-        .testimonial blockquote { border: none; font-size: 1.5em; font-style: italic; max-width: 800px; margin: 0 auto 20px auto; }
-        .testimonial cite { font-weight: bold; }
+        .section h2 { font-size: 2.5em; margin-bottom: 50px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .card { background-color: var(--secondary-color); padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { font-size: 1.5em; color: var(--accent-color); margin-top: 0; }
+        .card .icon { font-size: 2.5em; color: var(--logo-gold); margin-bottom: 15px; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { margin-bottom: 10px; }
+        .how-it-works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; align-items: center; }
+        .step { text-align: center; }
+        .step .icon { font-size: 3em; color: var(--logo-gold); margin-bottom: 15px; }
+        .step h4 { font-size: 1.2em; color: var(--primary-color); }
+        .programs-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+        .programs-table th, .programs-table td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        .programs-table th { background-color: var(--light-gray); }
+        .programs-table .icon { font-size: 1.5em; vertical-align: middle; margin-right: 10px; }
+        .testimonial-section { background-color: var(--primary-color); color: var(--secondary-color); }
+        .testimonial-section h2 { color: var(--logo-gold); }
+        .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .testimonial blockquote { border: none; font-size: 1.2em; font-style: italic; margin: 0 0 15px 0; }
+        .testimonial cite { font-weight: bold; color: var(--logo-gold); }
         .footer { background-color: #222; color: #aaa; text-align: center; padding: 20px 0; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .grid-3, .how-it-works-grid, .testimonial-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <header class="header"><div class="container"><a href="/"><img src="logo.png" alt="BeBetter Logo" class="logo"></a></div></header>
+
+    <header class="header"><div class="container"><a href="index.html"><img src="logo.png" alt="BeBetter Logo" class="logo"></a></div></header>
+
     <main>
         <section class="hero">
             <h1 data-aos="fade-down">No shortcuts, just results.</h1>
-            <p data-aos="fade-up" data-aos-delay="200">We are committed to guiding you to live a better life and be the best possible version of yourself, physically and mentally.</p>
+            <p data-aos="fade-up" data-aos-delay="200">We’re here to guide you to live a better life — physically, mentally, and emotionally. Become the best version of yourself, one day at a time.</p>
             <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="400">Begin Your Journey</a>
         </section>
-        <section id="approach" class="section section-light">
+
+        <section id="what-you-get" class="section section-light">
             <div class="container">
-                <h2 data-aos="fade-up">Our Approach</h2>
-                <div class="approach-grid">
-                    <div class="approach-card" data-aos="fade-up" data-aos-delay="100"><h3>Physical Wellness</h3><p>We provide tailored fitness and nutritional guidance to build a strong, resilient body that serves you for life.</p></div>
-                    <div class="approach-card" data-aos="fade-up" data-aos-delay="200"><h3>Mental Clarity</h3><p>Through proven mindset coaching techniques, we help you overcome obstacles and develop unwavering focus.</p></div>
-                    <div class="approach-card" data-aos="fade-up" data-aos-delay="300"><h3>Sustainable Habits</h3><p>Our focus is on creating lasting change by integrating powerful, positive habits into your daily routine.</p></div>
+                <h2 data-aos="fade-up">Transform your body, mind, and habits — sustainably.</h2>
+                <div class="grid-3">
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon">💪</div>
+                        <h3>Physical Wellness</h3>
+                        <p><em>“Move better. Feel stronger.”</em> We design customized fitness and nutrition plans to build a resilient body that supports your lifestyle — not restricts it.</p>
+                        <p><strong>Personal Training | Home Workouts | Gym or Outdoor Options</strong></p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon">🧠</div>
+                        <h3>Mental Clarity</h3>
+                        <p><em>“Stronger mind. Sharper focus.”</em> Through mindset and behavioral coaching, we help you overcome self-doubt, procrastination, and emotional roadblocks — so you stay consistent.</p>
+                        <p><strong>Mindset Coaching | Meditation | Accountability Systems</strong></p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon">🔁</div>
+                        <h3>Sustainable Habits</h3>
+                        <p><em>“Small steps. Big change.”</em> Our focus is on helping you build powerful, positive habits that stick — in fitness, food, sleep, and lifestyle.</p>
+                        <p><strong>Habit Tracking | 28 Easy Challenge | Journaling & Reflection</strong></p>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="testimonial" class="section testimonial"><div class="container" data-aos="fade-up"><h2>Words From Our Community</h2><blockquote>"Working with bebetter changed my entire outlook on life. I'm stronger and more focused than I've ever been."</blockquote><cite>- Alex Johnson</cite></div></section>
+
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <h2 data-aos="fade-up">Simple, guided, result-driven.</h2>
+                <div class="how-it-works-grid">
+                    <div class="step" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon">1️⃣</div><h4>Assess</h4><p>We understand your current health, goals, and lifestyle.</p>
+                    </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon">2️⃣</div><h4>Customize</h4><p>Your coach designs a tailored plan — workouts, meals, and habits.</p>
+                    </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon">3️⃣</div><h4>Execute</h4><p>You get daily guidance and motivation to stay on track.</p>
+                    </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon">4️⃣</div><h4>Review</h4><p>We measure progress and refine your plan every few weeks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="section section-light">
+            <div class="container">
+                <h2 data-aos="fade-up">Programs to Choose From</h2>
+                <table class="programs-table" data-aos="fade-up">
+                    <thead>
+                        <tr><th>Icon</th><th>Title</th><th>Description</th><th>CTA</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="icon">🏋️</span></td><td><strong>1-on-1 Coaching</strong></td><td>Personalized fitness and nutrition guidance from certified BeBetter trainers.</td><td><a href="#" class="cta-button">Book a Free Assessment</a></td></tr>
+                        <tr><td><span class="icon">👥</span></td><td><strong>28 Easy Challenge</strong></td><td>4-week habit-building challenge with accountability, prizes, and fun tasks.</td><td><a href="#" class="cta-button">Join the Challenge</a></td></tr>
+                        <tr><td><span class="icon">🧘</span></td><td><strong>84-Day Transformation Program</strong></td><td>Structured program to improve body composition, strength, and mindset.</td><td><a href="#" class="cta-button">Explore Now</a></td></tr>
+                        <tr><td><span class="icon">📲</span></td><td><strong>Online Classes</strong></td><td>Join our live group sessions for flexibility and community motivation.</td><td><a href="#" class="cta-button">View Schedule</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="testimonial" class="section testimonial-section">
+            <div class="container" data-aos="fade-up">
+                <h2>Words From Our Community</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <blockquote>"Working with BeBetter changed my entire outlook on life. I’m stronger, leaner, and more consistent than I’ve ever been."</blockquote>
+                        <cite>— Rahul E, Hyderabad</cite>
+                    </div>
+                     <div class="testimonial">
+                        <blockquote>"The 28 Easy Challenge helped me rebuild my confidence and energy. I feel alive again!"</blockquote>
+                        <cite>— Roma Agarwal, Hyderabad</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="section">
              <div class="container">
                 <h2 data-aos="fade-up">Ready to Be Better?</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Take the first step towards becoming the best version of yourself. Let's talk.</p>
-                <a href="mailto:your-email@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="200">Book a Free Discovery Call</a>
+                <p data-aos="fade-up" data-aos-delay="100">Take the first step towards becoming your strongest, happiest self.</p>
+                <a href="mailto:nira@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="200">Book a Free Discovery Call</a>
+                <br><br>
+                <a href="#" class="cta-button" data-aos="fade-up" data-aos-delay="300">Join the Next Challenge</a>
             </div>
         </section>
     </main>
+
     <footer class="footer"><p>&copy; 2025 bebetter.run - All Rights Reserved.</p></footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
 </body>
