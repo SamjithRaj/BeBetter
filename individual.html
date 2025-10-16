@@ -35,7 +35,16 @@
         }
         .hero h1 { font-size: 3.5em; margin: 0 0 10px 0; color: var(--logo-gold); }
         .hero p { font-size: 1.2em; max-width: 600px; margin-bottom: 30px; }
-        .cta-button { background-color: var(--accent-color); color: var(--secondary-color); padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; }
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            white-space: nowrap; /* Prevents button text from wrapping */
+        }
         .cta-button:hover { background-color: #255a80; }
         .section { text-align: center; padding: 80px 0; }
         .section-light { background-color: var(--light-gray); }
@@ -51,8 +60,8 @@
         .step { text-align: center; }
         .step .icon { font-size: 3em; color: var(--logo-gold); margin-bottom: 15px; }
         .step h4 { font-size: 1.2em; color: var(--primary-color); }
-        .programs-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
-        .programs-table th, .programs-table td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        .programs-table { width: 100%; border-collapse: collapse; margin-top: 40px; table-layout: fixed; }
+        .programs-table th, .programs-table td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; vertical-align: middle; }
         .programs-table th { background-color: var(--light-gray); }
         .programs-table .icon { font-size: 1.5em; vertical-align: middle; margin-right: 10px; }
         .testimonial-section { background-color: var(--primary-color); color: var(--secondary-color); }
@@ -127,17 +136,24 @@
         <section id="programs" class="section section-light">
             <div class="container">
                 <h2 data-aos="fade-up">Programs to Choose From</h2>
-                <table class="programs-table" data-aos="fade-up">
-                    <thead>
-                        <tr><th>Icon</th><th>Title</th><th>Description</th><th>CTA</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><span class="icon">🏋️</span></td><td><strong>1-on-1 Coaching</strong></td><td>Personalized fitness and nutrition guidance from certified BeBetter trainers.</td><td><a href="#" class="cta-button">Book a Free Assessment</a></td></tr>
-                        <tr><td><span class="icon">👥</span></td><td><strong>28 Easy Challenge</strong></td><td>4-week habit-building challenge with accountability, prizes, and fun tasks.</td><td><a href="#" class="cta-button">Join the Challenge</a></td></tr>
-                        <tr><td><span class="icon">🧘</span></td><td><strong>84-Day Transformation Program</strong></td><td>Structured program to improve body composition, strength, and mindset.</td><td><a href="#" class="cta-button">Explore Now</a></td></tr>
-                        <tr><td><span class="icon">📲</span></td><td><strong>Online Classes</strong></td><td>Join our live group sessions for flexibility and community motivation.</td><td><a href="#" class="cta-button">View Schedule</a></td></tr>
-                    </tbody>
-                </table>
+                <div style="overflow-x:auto;">
+                    <table class="programs-table" data-aos="fade-up">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;">Icon</th>
+                                <th style="width: 20%;">Title</th>
+                                <th style="width: 45%;">Description</th>
+                                <th style="width: 25%;">CTA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><span class="icon">🏋️</span></td><td><strong>1-on-1 Coaching</strong></td><td>Personalized fitness and nutrition guidance from certified BeBetter trainers.</td><td><a href="#" class="cta-button">Book a Free Assessment</a></td></tr>
+                            <tr><td><span class="icon">👥</span></td><td><strong>28 Easy Challenge</strong></td><td>4-week habit-building challenge with accountability, prizes, and fun tasks.</td><td><a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Join the Challenge</a></td></tr>
+                            <tr><td><span class="icon">🧘</span></td><td><strong>84-Day Transformation Program</strong></td><td>Structured program to improve body composition, strength, and mindset.</td><td><a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Explore Now</a></td></tr>
+                            <tr><td><span class="icon">📲</span></td><td><strong>Online Classes</strong></td><td>Join our live group sessions for flexibility and community motivation.</td><td><a href="#" class="cta-button">View Schedule</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
@@ -147,11 +163,11 @@
                 <div class="testimonial-grid">
                     <div class="testimonial">
                         <blockquote>"Working with BeBetter changed my entire outlook on life. I’m stronger, leaner, and more consistent than I’ve ever been."</blockquote>
-                        <cite>— Rahul E, Hyderabad</cite>
+                        <cite>— Alex Johnson</cite>
                     </div>
                      <div class="testimonial">
                         <blockquote>"The 28 Easy Challenge helped me rebuild my confidence and energy. I feel alive again!"</blockquote>
-                        <cite>— Roma Agarwal, Hyderabad</cite>
+                        <cite>— Rashmi, Hyderabad</cite>
                     </div>
                 </div>
             </div>
@@ -161,9 +177,9 @@
              <div class="container">
                 <h2 data-aos="fade-up">Ready to Be Better?</h2>
                 <p data-aos="fade-up" data-aos-delay="100">Take the first step towards becoming your strongest, happiest self.</p>
-                <a href="mailto:nira@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="200">Book a Free Discovery Call</a>
+                <a href="mailto:your-email@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="200">Book a Free Discovery Call</a>
                 <br><br>
-                <a href="#" class="cta-button" data-aos="fade-up" data-aos-delay="300">Join the Next Challenge</a>
+                <a href="https://challenge.bebetter.run" target="_blank" class="cta-button" data-aos="fade-up" data-aos-delay="300">Join the Next Challenge</a>
             </div>
         </section>
     </main>
