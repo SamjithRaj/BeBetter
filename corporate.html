@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeBetter - For Corporations</title>
+    <title>BeBetter - For My Team</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0a2540; /* Deep Blue from original */
+            --primary-color: #0a2540; /* Deep Blue */
             --secondary-color: #ffffff; /* White */
             --accent-color: #2C6A97; /* Logo Blue */
             --logo-gold: #FDCB01; /* Logo Gold */
@@ -15,42 +15,156 @@
             --light-gray: #f7f7f7;
         }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); }
-        .container { width: 90%; max-width: 1100px; margin: auto; padding: 60px 0; }
+        .container { width: 90%; max-width: 1100px; margin: auto; padding: 60px 20px; }
         .header { position: absolute; top: 0; left: 0; width: 100%; padding: 20px 0; z-index: 10; }
-        .header .container { display: flex; justify-content: space-between; align-items: center; padding: 0; }
+        .header .container { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .logo { max-width: 150px; }
-        .hero { background-color: var(--primary-color); color: var(--secondary-color); min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; padding: 100px 20px; }
+        .hero {
+            /* Developer Note: Replace with energetic team doing a fun fitness activity */
+            background: linear-gradient(rgba(44, 106, 151, 0.8), rgba(44, 106, 151, 0.8)), url('placeholder-corporate.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--secondary-color);
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+        }
         .hero h1 { font-size: 3.5em; margin: 0 0 10px 0; color: var(--logo-gold); }
         .hero p { font-size: 1.2em; max-width: 600px; margin-bottom: 30px; }
-        .cta-button { background-color: var(--accent-color); color: var(--secondary-color); padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; }
-        .cta-button:hover { background-color: #255a80; }
-        .section { text-align: center; }
+        .cta-button { background-color: var(--logo-gold); color: var(--primary-color); padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; }
+        .cta-button:hover { background-color: #e0b800; }
+        .section { padding: 80px 0; text-align: center; }
         .section-light { background-color: var(--light-gray); }
-        .section h2 { font-size: 2.5em; margin-bottom: 40px; }
+        .section h2 { font-size: 2.5em; margin-bottom: 50px; }
+        .pillars-grid, .offerings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .card { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: var(--accent-color); font-size: 1.5em; }
+        .card .icon { font-size: 2.5em; color: var(--logo-gold); margin-bottom: 15px; }
+        .timeline { display: flex; justify-content: space-between; position: relative; max-width: 800px; margin: auto; }
+        .timeline::after { content: ''; position: absolute; width: 100%; top: 25px; left: 0; height: 4px; background: var(--accent-color); }
+        .timeline-step { text-align: center; width: 25%; z-index: 1; }
+        .timeline-icon { background: var(--logo-gold); color: white; border-radius: 50%; width: 50px; height: 50px; line-height: 50px; margin: 0 auto 10px; font-size: 1.5em; }
+        .success-stories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .story { padding: 20px; border-left: 4px solid var(--logo-gold); text-align: left; }
+        .story h4 { margin-top: 0; }
         .footer { background-color: #222; color: #aaa; text-align: center; padding: 20px 0; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .timeline { flex-direction: column; }
+            .timeline::after { display: none; }
+            .timeline-step { margin-bottom: 20px; width: 100%; }
+        }
     </style>
 </head>
 <body>
-    <header class="header"><div class="container"><a href="/"><img src="logo.png" alt="BeBetter Logo" class="logo"></a></div></header>
+
+    <header class="header"><div class="container"><a href="index.html"><img src="logo.png" alt="BeBetter Logo" class="logo"></a></div></header>
+
     <main>
         <section class="hero">
             <h1 data-aos="fade-down">Elevate Your Team.</h1>
-            <p data-aos="fade-up" data-aos-delay="200">
-                Invest in your most valuable asset. Our corporate wellness programs are designed to boost productivity, enhance team cohesion, and build resilient leaders.
-            </p>
+            <p data-aos="fade-up" data-aos-delay="200">Invest in your most valuable asset — your people.<br>BeBetter corporate wellness programs enhance health, teamwork, and leadership energy across your organization.</p>
             <a href="mailto:nira@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="400">Request a Proposal</a>
         </section>
-        <section id="programs" class="section section-light">
+
+        <section class="section section-light">
             <div class="container">
-                <h2 data-aos="fade-up">Corporate Wellness Programs</h2>
-                <p data-aos="fade-up">(Content for corporate services will go here... e.g., workshops, leadership coaching, team wellness challenges, etc.)</p>
+                <h2 data-aos="fade-up">Healthy employees = high-performing teams.</h2>
+                <div class="pillars-grid">
+                    <div class="card" data-aos="fade-up" data-aos-delay="100"><div class="icon">💡</div><h3>Productivity</h3><p>Better energy = better results.</p></div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200"><div class="icon">💬</div><h3>Engagement</h3><p>Teams that move together stay connected.</p></div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="300"><div class="icon">❤️</div><h3>Resilience</h3><p>Wellness builds mental strength and reduces burnout.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="offerings" class="section">
+            <div class="container">
+                <h2 data-aos="fade-up">Our Core Offerings</h2>
+                <div class="offerings-grid">
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon">🏋️</div><h3>Corporate Wellness Programs</h3>
+                        <p><em>“Customized programs that fit your people.”</em> From on-site or online fitness sessions to nutrition and stress management — we help you create a culture of health.<br><strong>Fitness Sessions | Nutrition Plans | Webinars</strong></p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon">⚽</div><h3>Team Sports & Events</h3>
+                        <p><em>“Play hard. Bond harder.”</em> We organize everything from 5K runs to corporate tournaments and family sports carnivals.<br><strong>Walkathons | Marathons | Corporate Leagues</strong></p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon">🧘</div><h3>Workshops & Wellbeing Sessions</h3>
+                        <p><em>“Health meets leadership.”</em> Mindfulness, resilience, sleep, and work-life balance workshops designed for modern professionals.<br><strong>Mindfulness | Stress Management | Energy at Work</strong></p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon">🎯</div><h3>Wellness Challenges & Campaigns</h3>
+                        <p><em>“Gamified engagement that sticks.”</em> Fun 4-week challenges that promote hydration, movement, and teamwork — complete with leaderboards and rewards.<br><strong>28-Day Move Challenge | Step-a-thon</strong></p>
+                    </div>
+                     <div class="card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="icon">📊</div><h3>Analytics & Impact Reports</h3>
+                        <p><em>“Measure what matters.”</em> Quarterly participation data, progress dashboards, and ROI summaries for management review.<br><strong>Assessment Reports | Dashboards | Employee Feedback</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light">
+            <div class="container">
+                 <h2 data-aos="fade-up">How We Work</h2>
+                 <div class="timeline" data-aos="fade-up">
+                    <div class="timeline-step">
+                        <div class="timeline-icon">1</div><h4>Discover</h4><p>We study your organization’s needs.</p>
+                    </div>
+                     <div class="timeline-step">
+                        <div class="timeline-icon">2</div><h4>Design</h4><p>We create a tailored wellness plan.</p>
+                    </div>
+                     <div class="timeline-step">
+                        <div class="timeline-icon">3</div><h4>Deliver</h4><p>Our expert trainers execute it on-site or online.</p>
+                    </div>
+                     <div class="timeline-step">
+                        <div class="timeline-icon">4</div><h4>Measure</h4><p>You get tangible metrics and success stories.</p>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="success" class="section">
+            <div class="container">
+                <h2 data-aos="fade-up">Empowering organizations to BeBetter.</h2>
+                <div class="success-stories-grid">
+                    <div class="story" data-aos="fade-up" data-aos-delay="100">
+                        <h4>🏅 Hyderabad City Police – “Run for Action 2025”</h4>
+                        <p>2000+ participants, 45% first-time runners.</p>
+                    </div>
+                     <div class="story" data-aos="fade-up" data-aos-delay="200">
+                        <h4>🏢 Freedom Healthy Oils</h4>
+                        <p>4-week workplace fitness drive, 60% employee participation.</p>
+                    </div>
+                     <div class="story" data-aos="fade-up" data-aos-delay="300">
+                        <h4>💼 BNI & Corporate Collaborations</h4>
+                        <p>28-Day Challenge across 20+ companies.</p>
+                    </div>
+                </div>
+                 </div>
+        </section>
+
+        <section id="contact" class="section section-light">
+            <div class="container">
+                <h2 data-aos="fade-up">Let’s design your corporate wellness roadmap.</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Empower your teams to move, connect, and thrive — with measurable impact.</p>
+                <a href="mailto:nira@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="200">Request a Proposal</a>
+                <br><br>
+                <a href="mailto:nira@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="300">Schedule a Discovery Call</a>
             </div>
         </section>
     </main>
+
     <footer class="footer"><p>&copy; 2025 bebetter.run - All Rights Reserved.</p></footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
 </body>
-
 </html>
