@@ -13,17 +13,17 @@
             --accent-color: #2C6A97; /* Logo Blue */
             --logo-gold: #FDCB01; /* Logo Gold */
             --text-color: #333;
-            --light-gray: #f7f7f7;
+            --light-gray: #f9fafb; /* Changed to a slightly cooler gray */
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); background-color: var(--secondary-color); }
         .container { width: 90%; max-width: 1100px; margin: auto; padding: 60px 20px; }
         .header { position: absolute; top: 0; left: 0; width: 100%; padding: 20px 0; z-index: 10; }
         .header .container { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .logo { max-width: 150px; }
         .hero {
-            background: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.7)), url('placeholder-individual.jpg'); /* Developer Note: Replace with a confident Indian man/woman in mid-motion */
+            /* IMPORTANT: Replace 'placeholder-individual.jpg' with a real, high-quality photo */
+            background: linear-gradient(rgba(10, 37, 64, 0.8), rgba(10, 37, 64, 0.8)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
             background-size: cover;
-            background-position: center;
             color: var(--secondary-color);
             height: 90vh;
             display: flex;
@@ -33,46 +33,79 @@
             text-align: center;
             padding: 0 20px;
         }
-        .hero h1 { font-size: 3.5em; margin: 0 0 10px 0; color: var(--logo-gold); }
+        .hero h1 { font-size: 3.8em; margin: 0 0 10px 0; color: var(--logo-gold); font-weight: 700; }
         .hero p { font-size: 1.2em; max-width: 600px; margin-bottom: 30px; }
         .cta-button {
             background-color: var(--accent-color);
             color: var(--secondary-color);
-            padding: 15px 30px;
+            padding: 15px 35px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px; /* Slightly more rounded */
             font-weight: bold;
-            transition: background-color 0.3s ease;
-            white-space: nowrap; /* Prevents button text from wrapping */
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Added subtle shadow */
         }
-        .cta-button:hover { background-color: #255a80; }
+        .cta-button:hover {
+            background-color: #255a80;
+            transform: translateY(-3px); /* Add a lift effect on hover */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
         .section { text-align: center; padding: 80px 0; }
         .section-light { background-color: var(--light-gray); }
-        .section h2 { font-size: 2.5em; margin-bottom: 50px; }
+        .section h2 { font-size: 2.8em; margin-bottom: 50px; font-weight: 600; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-        .card { background-color: var(--secondary-color); padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-        .card:hover { transform: translateY(-10px); }
+        .card { background-color: var(--secondary-color); padding: 30px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 35px rgba(0,0,0,0.1); }
         .card h3 { font-size: 1.5em; color: var(--accent-color); margin-top: 0; }
-        .card .icon { font-size: 2.5em; color: var(--logo-gold); margin-bottom: 15px; }
-        .card ul { list-style: none; padding: 0; }
-        .card li { margin-bottom: 10px; }
-        .how-it-works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; align-items: center; }
-        .step { text-align: center; }
-        .step .icon { font-size: 3em; color: var(--logo-gold); margin-bottom: 15px; }
-        .step h4 { font-size: 1.2em; color: var(--primary-color); }
-        .programs-table { width: 100%; border-collapse: collapse; margin-top: 40px; table-layout: fixed; }
-        .programs-table th, .programs-table td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; vertical-align: middle; }
-        .programs-table th { background-color: var(--light-gray); }
-        .programs-table .icon { font-size: 1.5em; vertical-align: middle; margin-right: 10px; }
+        .card .icon {
+            font-size: 2em;
+            color: var(--accent-color);
+            background-color: #eef4f8;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            margin: 0 auto 20px;
+        }
+        .programs-table {
+            width: 100%;
+            border-collapse: separate; /* Changed for border-radius */
+            border-spacing: 0 10px; /* Spacing between rows */
+            margin-top: 40px;
+            table-layout: fixed;
+        }
+        .programs-table th { padding: 15px; text-align: left; color: #555; font-weight: 600; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; }
+        .programs-table td {
+            padding: 20px;
+            text-align: left;
+            vertical-align: middle;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .programs-table tr td:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        .programs-table tr td:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        .programs-table .icon {
+            font-size: 1.5em;
+            color: var(--accent-color);
+            width: 50px;
+            text-align: center;
+        }
+
         .testimonial-section { background-color: var(--primary-color); color: var(--secondary-color); }
         .testimonial-section h2 { color: var(--logo-gold); }
         .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .testimonial blockquote { border: none; font-size: 1.2em; font-style: italic; margin: 0 0 15px 0; }
         .testimonial cite { font-weight: bold; color: var(--logo-gold); }
         .footer { background-color: #222; color: #aaa; text-align: center; padding: 20px 0; }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5em; }
-            .grid-3, .how-it-works-grid, .testimonial-grid { grid-template-columns: 1fr; }
+            .grid-3, .testimonial-grid { grid-template-columns: 1fr; }
+            .programs-table { display: block; }
+            .programs-table thead, .programs-table tbody, .programs-table tr { display: block; }
+            .programs-table td, .programs-table th { display: block; text-align: center; }
         }
     </style>
 </head>
@@ -89,104 +122,76 @@
 
         <section id="what-you-get" class="section section-light">
             <div class="container">
-                <h2 data-aos="fade-up">Transform your body, mind, and habits — sustainably.</h2>
+                <h2 data-aos="fade-up">Transform your body, mind, and habits.</h2>
                 <div class="grid-3">
                     <div class="card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon">💪</div>
+                        <div class="icon"><i class="fas fa-dumbbell"></i></div>
                         <h3>Physical Wellness</h3>
-                        <p><em>“Move better. Feel stronger.”</em> We design customized fitness and nutrition plans to build a resilient body that supports your lifestyle — not restricts it.</p>
-                        <p><strong>Personal Training | Home Workouts | Gym or Outdoor Options</strong></p>
+                        <p>Customized fitness and nutrition plans to build a resilient body that supports your lifestyle.</p>
                     </div>
                     <div class="card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon">🧠</div>
+                        <div class="icon"><i class="fas fa-brain"></i></div>
                         <h3>Mental Clarity</h3>
-                        <p><em>“Stronger mind. Sharper focus.”</em> Through mindset and behavioral coaching, we help you overcome self-doubt, procrastination, and emotional roadblocks — so you stay consistent.</p>
-                        <p><strong>Mindset Coaching | Meditation | Accountability Systems</strong></p>
+                        <p>Mindset coaching to overcome self-doubt, procrastination, and emotional roadblocks.</p>
                     </div>
                     <div class="card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon">🔁</div>
+                        <div class="icon"><i class="fas fa-sync-alt"></i></div>
                         <h3>Sustainable Habits</h3>
-                        <p><em>“Small steps. Big change.”</em> Our focus is on helping you build powerful, positive habits that stick — in fitness, food, sleep, and lifestyle.</p>
-                        <p><strong>Habit Tracking | 28 Easy Challenge | Journaling & Reflection</strong></p>
+                        <p>Build powerful, positive habits in fitness, food, and sleep that last a lifetime.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works" class="section">
-            <div class="container">
-                <h2 data-aos="fade-up">Simple, guided, result-driven.</h2>
-                <div class="how-it-works-grid">
-                    <div class="step" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon">1️⃣</div><h4>Assess</h4><p>We understand your current health, goals, and lifestyle.</p>
-                    </div>
-                    <div class="step" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon">2️⃣</div><h4>Customize</h4><p>Your coach designs a tailored plan — workouts, meals, and habits.</p>
-                    </div>
-                    <div class="step" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon">3️⃣</div><h4>Execute</h4><p>You get daily guidance and motivation to stay on track.</p>
-                    </div>
-                    <div class="step" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon">4️⃣</div><h4>Review</h4><p>We measure progress and refine your plan every few weeks.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="programs" class="section section-light">
+        <section id="programs" class="section">
             <div class="container">
                 <h2 data-aos="fade-up">Programs to Choose From</h2>
                 <div style="overflow-x:auto;">
                     <table class="programs-table" data-aos="fade-up">
                         <thead>
                             <tr>
-                                <th style="width: 10%;">Icon</th>
+                                <th style="width: 10%;"></th>
                                 <th style="width: 20%;">Title</th>
                                 <th style="width: 45%;">Description</th>
-                                <th style="width: 25%;">CTA</th>
+                                <th style="width: 25%;"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><span class="icon">🏋️</span></td><td><strong>1-on-1 Coaching</strong></td><td>Personalized fitness and nutrition guidance from certified BeBetter trainers.</td><td><a href="#" class="cta-button">Book a Free Assessment</a></td></tr>
-                            <tr><td><span class="icon">👥</span></td><td><strong>28 Easy Challenge</strong></td><td>4-week habit-building challenge with accountability, prizes, and fun tasks.</td><td><a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Join the Challenge</a></td></tr>
-                            <tr><td><span class="icon">🧘</span></td><td><strong>84-Day Transformation Program</strong></td><td>Structured program to improve body composition, strength, and mindset.</td><td><a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Explore Now</a></td></tr>
-                            <tr><td><span class="icon">📲</span></td><td><strong>Online Classes</strong></td><td>Join our live group sessions for flexibility and community motivation.</td><td><a href="#" class="cta-button">View Schedule</a></td></tr>
+                            <tr>
+                                <td><div class="icon"><i class="fas fa-user"></i></div></td>
+                                <td><strong>1-on-1 Coaching</strong></td>
+                                <td>Personalized fitness and nutrition guidance from certified BeBetter trainers.</td>
+                                <td><a href="#" class="cta-button">Book a Free Assessment</a></td>
+                            </tr>
+                            <tr>
+                                <td><div class="icon"><i class="fas fa-users"></i></div></td>
+                                <td><strong>28 Easy Challenge</strong></td>
+                                <td>4-week habit-building challenge with accountability, prizes, and fun tasks.</td>
+                                <td><a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Join the Challenge</a></td>
+                            </tr>
+                            <tr>
+                                <td><div class="icon"><i class="fas fa-chart-line"></i></div></td>
+                                <td><strong>84-Day Transformation</strong></td>
+                                <td>Structured program to improve body composition, strength, and mindset.</td>
+                                <td><a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Explore Now</a></td>
+                            </tr>
+                            <tr>
+                                <td><div class="icon"><i class="fas fa-video"></i></div></td>
+                                <td><strong>Online Classes</strong></td>
+                                <td>Join our live group sessions for flexibility and community motivation.</td>
+                                <td><a href="#" class="cta-button">View Schedule</a></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </section>
 
-        <section id="testimonial" class="section testimonial-section">
-            <div class="container" data-aos="fade-up">
-                <h2>Words From Our Community</h2>
-                <div class="testimonial-grid">
-                    <div class="testimonial">
-                        <blockquote>"Working with BeBetter changed my entire outlook on life. I’m stronger, leaner, and more consistent than I’ve ever been."</blockquote>
-                        <cite>— Alex Johnson</cite>
-                    </div>
-                     <div class="testimonial">
-                        <blockquote>"The 28 Easy Challenge helped me rebuild my confidence and energy. I feel alive again!"</blockquote>
-                        <cite>— Rashmi, Hyderabad</cite>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-             <div class="container">
-                <h2 data-aos="fade-up">Ready to Be Better?</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Take the first step towards becoming your strongest, happiest self.</p>
-                <a href="mailto:your-email@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="200">Book a Free Discovery Call</a>
-                <br><br>
-                <a href="https://challenge.bebetter.run" target="_blank" class="cta-button" data-aos="fade-up" data-aos-delay="300">Join the Next Challenge</a>
-            </div>
-        </section>
-    </main>
+        </main>
 
     <footer class="footer"><p>&copy; 2025 bebetter.run - All Rights Reserved.</p></footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 800, once: true });</script>
+    <script>AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });</script>
 </body>
 </html>
