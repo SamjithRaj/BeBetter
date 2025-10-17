@@ -20,8 +20,7 @@
         .header .container { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .logo { max-width: 150px; }
         .hero {
-            /* Developer Note: Replace with energetic team doing a fun fitness activity */
-            background: linear-gradient(rgba(44, 106, 151, 0.8), rgba(44, 106, 151, 0.8)), url('placeholder-corporate.jpg');
+            background: linear-gradient(rgba(44, 106, 151, 0.8), rgba(44, 106, 151, 0.8)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             color: var(--secondary-color);
@@ -41,7 +40,7 @@
         .section-light { background-color: var(--light-gray); }
         .section h2 { font-size: 2.5em; margin-bottom: 50px; }
         .pillars-grid, .offerings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-        .card { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .card { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px_15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
         .card:hover { transform: translateY(-10px); }
         .card h3 { color: var(--accent-color); font-size: 1.5em; }
         .card .icon { font-size: 2.5em; color: var(--logo-gold); margin-bottom: 15px; }
@@ -49,9 +48,58 @@
         .timeline::after { content: ''; position: absolute; width: 100%; top: 25px; left: 0; height: 4px; background: var(--accent-color); }
         .timeline-step { text-align: center; width: 25%; z-index: 1; }
         .timeline-icon { background: var(--logo-gold); color: white; border-radius: 50%; width: 50px; height: 50px; line-height: 50px; margin: 0 auto 10px; font-size: 1.5em; }
-        .success-stories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .story { padding: 20px; border-left: 4px solid var(--logo-gold); text-align: left; }
-        .story h4 { margin-top: 0; }
+        
+        /* New Styles for Success Story Cards */
+        .success-stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        .story-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .story-card:hover {
+            transform: translateY(-10px);
+        }
+        .story-thumbnail {
+            position: relative;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .story-thumbnail a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .story-thumbnail .play-icon {
+            font-size: 4em;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .story-content {
+            padding: 25px;
+        }
+        .story-content h4 {
+            margin-top: 0;
+            font-size: 1.4em;
+            color: var(--primary-color);
+        }
+        .story-content p {
+            font-size: 1em;
+            color: #555;
+        }
+
         .footer { background-color: #222; color: #aaa; text-align: center; padding: 20px 0; }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5em; }
@@ -60,6 +108,7 @@
             .timeline-step { margin-bottom: 20px; width: 100%; }
         }
     </style>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -135,20 +184,38 @@
             <div class="container">
                 <h2 data-aos="fade-up">Empowering organizations to BeBetter.</h2>
                 <div class="success-stories-grid">
-                    <div class="story" data-aos="fade-up" data-aos-delay="100">
-                        <h4>🏅 Hyderabad City Police – “Run for Action 2025”</h4>
-                        <p>2000+ participants, 45% first-time runners.</p>
+                    <div class="story-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="story-thumbnail" style="background-image: url('https://i.ytimg.com/vi/X305tN0IQrQ/maxresdefault.jpg');">
+                            <a href="https://youtu.be/X305tN0IQrQ" target="_blank" aria-label="Play Video">
+                                <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                            </a>
+                        </div>
+                        <div class="story-content">
+                            <h4>🏅 Hyderabad City Police Run</h4>
+                            <p>An inspiring city-wide event with <strong>5000+ participants</strong>, encouraging fitness and community action among citizens and police personnel.</p>
+                        </div>
                     </div>
-                     <div class="story" data-aos="fade-up" data-aos-delay="200">
-                        <h4>🏢 Freedom Healthy Oils</h4>
-                        <p>4-week workplace fitness drive, 60% employee participation.</p>
+                    <div class="story-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="story-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1573496773905-f5b17e76b254?q=80&w=2070&auto=format&fit=crop');">
+                        </div>
+                        <div class="story-content">
+                            <h4>🏢 Anonymous Corporate Giant</h4>
+                            <p>A comprehensive 4-week workplace fitness drive resulted in <strong>60% employee participation</strong> and a measurable boost in team morale and energy levels.</p>
+                        </div>
                     </div>
-                     <div class="story" data-aos="fade-up" data-aos-delay="300">
-                        <h4>💼 BNI & Corporate Collaborations</h4>
-                        <p>28-Day Challenge across 20+ companies.</p>
+                    <div class="story-card" data-aos="fade-up" data-aos-delay="300">
+                         <div class="story-thumbnail" style="background-image: url('https://i.ytimg.com/vi/kXED_QTqJ-A/maxresdefault.jpg');">
+                            <a href="https://youtube.com/shorts/kXED_QTqJ-A?si=iT7_re1fDhjFYBtP" target="_blank" aria-label="Play Video">
+                                <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                            </a>
+                        </div>
+                        <div class="story-content">
+                            <h4>💼 Corporate Day Out & Challenges</h4>
+                            <p>Engaging 28-Day Challenges and team-building day outs across <strong>20+ companies</strong>, including BNI, fostering collaboration and healthy competition.</p>
+                        </div>
                     </div>
                 </div>
-                 </div>
+            </div>
         </section>
 
         <section id="contact" class="section section-light">
@@ -156,8 +223,6 @@
                 <h2 data-aos="fade-up">Let’s design your corporate wellness roadmap.</h2>
                 <p data-aos="fade-up" data-aos-delay="100">Empower your teams to move, connect, and thrive — with measurable impact.</p>
                 <a href="mailto:nira@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="200">Request a Proposal</a>
-                <br><br>
-                <a href="mailto:nira@bebetter.run" class="cta-button" data-aos="fade-up" data-aos-delay="300">Schedule a Discovery Call</a>
             </div>
         </section>
     </main>
