@@ -13,7 +13,7 @@
             --accent-color: #2C6A97; /* Logo Blue */
             --logo-gold: #FDCB01; /* Logo Gold */
             --text-color: #333;
-            --light-gray: #f9fafb; /* Changed to a slightly cooler gray */
+            --light-gray: #f9fafb; /* Cooler gray */
         }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text-color); background-color: var(--secondary-color); }
         .container { width: 90%; max-width: 1100px; margin: auto; padding: 60px 20px; }
@@ -21,7 +21,6 @@
         .header .container { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .logo { max-width: 150px; }
         .hero {
-            /* IMPORTANT: Replace 'placeholder-individual.jpg' with a real, high-quality photo */
             background: linear-gradient(rgba(10, 37, 64, 0.8), rgba(10, 37, 64, 0.8)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
             background-size: cover;
             color: var(--secondary-color);
@@ -40,15 +39,16 @@
             color: var(--secondary-color);
             padding: 15px 35px;
             text-decoration: none;
-            border-radius: 8px; /* Slightly more rounded */
+            border-radius: 8px;
             font-weight: bold;
             transition: all 0.3s ease;
             white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Added subtle shadow */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: inline-block; /* Ensures proper spacing and shadow */
         }
         .cta-button:hover {
             background-color: #255a80;
-            transform: translateY(-3px); /* Add a lift effect on hover */
+            transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
         .section { text-align: center; padding: 80px 0; }
@@ -68,29 +68,53 @@
             line-height: 60px;
             margin: 0 auto 20px;
         }
-        .programs-table {
-            width: 100%;
-            border-collapse: separate; /* Changed for border-radius */
-            border-spacing: 0 10px; /* Spacing between rows */
-            margin-top: 40px;
-            table-layout: fixed;
+        
+        /* New Styles for Program Cards */
+        .program-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .programs-table th { padding: 15px; text-align: left; color: #555; font-weight: 600; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; }
-        .programs-table td {
-            padding: 20px;
-            text-align: left;
-            vertical-align: middle;
+        .program-card {
             background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .programs-table tr td:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
-        .programs-table tr td:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
-
-        .programs-table .icon {
-            font-size: 1.5em;
+        .program-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+        }
+        .program-card .icon {
+            font-size: 1.8em;
             color: var(--accent-color);
-            width: 50px;
-            text-align: center;
+            background-color: #eef4f8;
+            border-radius: 50%;
+            min-width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            margin-right: 25px;
+        }
+        .program-card .content {
+            flex-grow: 1;
+        }
+        .program-card h3 {
+            margin: 0 0 5px 0;
+            color: var(--primary-color);
+        }
+        .program-card p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        .program-card .cta {
+            margin-left: 25px;
         }
 
         .testimonial-section { background-color: var(--primary-color); color: var(--secondary-color); }
@@ -103,9 +127,9 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5em; }
             .grid-3, .testimonial-grid { grid-template-columns: 1fr; }
-            .programs-table { display: block; }
-            .programs-table thead, .programs-table tbody, .programs-table tr { display: block; }
-            .programs-table td, .programs-table th { display: block; text-align: center; }
+            .program-card { flex-direction: column; text-align: center; }
+            .program-card .icon { margin-right: 0; margin-bottom: 20px; }
+            .program-card .cta { margin-left: 0; margin-top: 20px; }
         }
     </style>
 </head>
@@ -146,43 +170,47 @@
         <section id="programs" class="section">
             <div class="container">
                 <h2 data-aos="fade-up">Programs to Choose From</h2>
-                <div style="overflow-x:auto;">
-                    <table class="programs-table" data-aos="fade-up">
-                        <thead>
-                            <tr>
-                                <th style="width: 10%;"></th>
-                                <th style="width: 20%;">Title</th>
-                                <th style="width: 45%;">Description</th>
-                                <th style="width: 25%;"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><div class="icon"><i class="fas fa-user"></i></div></td>
-                                <td><strong>1-on-1 Coaching</strong></td>
-                                <td>Personalized fitness and nutrition guidance from certified BeBetter trainers.</td>
-                                <td><a href="#" class="cta-button">Book a Free Assessment</a></td>
-                            </tr>
-                            <tr>
-                                <td><div class="icon"><i class="fas fa-users"></i></div></td>
-                                <td><strong>28 Easy Challenge</strong></td>
-                                <td>4-week habit-building challenge with accountability, prizes, and fun tasks.</td>
-                                <td><a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Join the Challenge</a></td>
-                            </tr>
-                            <tr>
-                                <td><div class="icon"><i class="fas fa-chart-line"></i></div></td>
-                                <td><strong>84-Day Transformation</strong></td>
-                                <td>Structured program to improve body composition, strength, and mindset.</td>
-                                <td><a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Explore Now</a></td>
-                            </tr>
-                            <tr>
-                                <td><div class="icon"><i class="fas fa-video"></i></div></td>
-                                <td><strong>Online Classes</strong></td>
-                                <td>Join our live group sessions for flexibility and community motivation.</td>
-                                <td><a href="#" class="cta-button">View Schedule</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="program-list">
+                    <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="fas fa-user"></i></div>
+                        <div class="content">
+                            <h3>1-on-1 Coaching</h3>
+                            <p>Personalized fitness and nutrition guidance from certified BeBetter trainers.</p>
+                        </div>
+                        <div class="cta">
+                            <a href="#" class="cta-button">Book a Free Assessment</a>
+                        </div>
+                    </div>
+                    <div class="program-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="fas fa-users"></i></div>
+                        <div class="content">
+                            <h3>28 Easy Challenge</h3>
+                            <p>4-week habit-building challenge with accountability, prizes, and fun tasks.</p>
+                        </div>
+                        <div class="cta">
+                            <a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Join the Challenge</a>
+                        </div>
+                    </div>
+                    <div class="program-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="content">
+                            <h3>84-Day Transformation</h3>
+                            <p>Structured program to improve body composition, strength, and mindset.</p>
+                        </div>
+                        <div class="cta">
+                            <a href="https://challenge.bebetter.run" target="_blank" class="cta-button">Explore Now</a>
+                        </div>
+                    </div>
+                    <div class="program-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="fas fa-video"></i></div>
+                        <div class="content">
+                            <h3>Online Classes</h3>
+                            <p>Join our live group sessions for flexibility and community motivation.</p>
+                        </div>
+                        <div class="cta">
+                            <a href="#" class="cta-button">View Schedule</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
