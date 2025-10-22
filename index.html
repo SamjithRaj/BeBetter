@@ -78,6 +78,22 @@
             color: var(--logo-gold); /* Using gold for icons */
             margin-bottom: 10px;
         }
+        
+        .footer { 
+            color: #aaa; 
+            text-align: center; 
+            padding: 40px 0 20px 0; 
+            font-size: 0.9em; 
+            width: 100%;
+        }
+        .footer a { 
+            color: var(--logo-gold); 
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
         @media (max-width: 768px) {
             h1 { font-size: 2em; }
             .logo { max-width: 150px; }
@@ -102,11 +118,14 @@
             </a>
         </div>
     </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 bebetter.run - All Rights Reserved. | <a href="Privacy policy for bebetter.run.txt">Privacy Policy</a></p>
+    </footer>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
     </script>
 </body>
 </html>
-
-
