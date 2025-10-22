@@ -122,6 +122,8 @@
         .testimonial blockquote { border: none; font-size: 1.2em; font-style: italic; margin: 0 0 15px 0; }
         .testimonial cite { font-weight: bold; color: var(--logo-gold); }
         .footer { background-color: #222; color: #aaa; text-align: center; padding: 20px 0; }
+        .footer a { color: var(--logo-gold); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5em; }
@@ -239,10 +241,11 @@
         </section>
     </main>
 
-    <footer class="footer"><p>&copy; 2025 bebetter.run - All Rights Reserved.</p></footer>
+    <footer class="footer">
+        <p>&copy; 2025 bebetter.run - All Rights Reserved. | <a href="Privacy policy for bebetter.run.txt">Privacy Policy</a></p>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });</script>
 </body>
 </html>
-
