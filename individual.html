@@ -51,6 +51,14 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
+        
+        /* New helper class for button grouping */
+        .cta-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
         .section { text-align: center; padding: 80px 0; }
         .section-light { background-color: var(--light-gray); }
         .section h2 { font-size: 2.8em; margin-bottom: 50px; font-weight: 600; }
@@ -131,6 +139,7 @@
             .program-card { flex-direction: column; text-align: center; }
             .program-card .icon { margin-right: 0; margin-bottom: 20px; }
             .program-card .cta { margin-left: 0; margin-top: 20px; }
+            .cta-group { justify-content: center; } /* Center buttons on mobile */
         }
     </style>
 </head>
@@ -172,6 +181,7 @@
             <div class="container">
                 <h2 data-aos="fade-up">Programs to Choose From</h2>
                 <div class="program-list">
+                    
                     <div class="program-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="fas fa-user"></i></div>
                         <div class="content">
@@ -179,29 +189,34 @@
                             <p>Personalized fitness and nutrition guidance from certified BeBetter trainers.</p>
                         </div>
                         <div class="cta">
-                            <a href="mailto:info@bebetter.run" class="cta-button">Book a Free Assessment</a>
+                            <a href="INSERT_GOOGLE_FORM_LINK_HERE" target="_blank" class="cta-button">Book a Free Assessment</a>
                         </div>
                     </div>
+
                     <div class="program-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon"><i class="fas fa-users"></i></div>
                         <div class="content">
                             <h3>28 Easy Challenge</h3>
                             <p>4-week habit-building challenge with accountability, prizes, and fun tasks.</p>
                         </div>
-                        <div class="cta">
-                            <a href="https://youtube.com/shorts/7AhYheUgTRw" target="_blank" class="cta-button">Join the Challenge</a>
+                        <div class="cta cta-group">
+                            <a href="https://youtube.com/shorts/7AhYheUgTRw" target="_blank" class="cta-button">Know More</a>
+                            <a href="INSERT_CHALLENGE_REGISTRATION_LINK_HERE" target="_blank" class="cta-button">Join the Challenge</a>
                         </div>
                     </div>
+
                     <div class="program-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="icon"><i class="fas fa-chart-line"></i></div>
                         <div class="content">
                             <h3>84-Day Transformation</h3>
                             <p>Structured program to improve body composition, strength, and mindset.</p>
                         </div>
-                        <div class="cta">
-                            <a href="https://youtube.com/shorts/7AhYheUgTRw" target="_blank" class="cta-button">Explore Now</a>
+                        <div class="cta cta-group">
+                            <a href="https://youtube.com/shorts/7AhYheUgTRw" target="_blank" class="cta-button">Know More</a>
+                            <a href="INSERT_TRANSFORMATION_REGISTRATION_LINK_HERE" target="_blank" class="cta-button">Join the Challenge</a>
                         </div>
                     </div>
+
                     <div class="program-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="icon"><i class="fas fa-video"></i></div>
                         <div class="content">
@@ -209,7 +224,7 @@
                             <p>Join our live group sessions for flexibility and community motivation.</p>
                         </div>
                         <div class="cta">
-                            <a href="mailto:info@bebetter.run" class="cta-button">View Schedule</a>
+                            <a href="INSERT_GOOGLE_FORM_LINK_HERE" target="_blank" class="cta-button">View Schedule</a>
                         </div>
                     </div>
                 </div>
